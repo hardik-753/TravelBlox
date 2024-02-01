@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+
+    <!-- <style>
+      body {
+        background-image: linear-gradient(
+          rgb(246, 246, 246),
+          rgb(162, 212, 255)
+        );
+        height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        max-width: 800px;
+        height: 60vh;
+        background-color: #007bff;
+        border: 2px solid black;
+        margin: auto;
+        padding: 5px;
+        overflow-y: auto;
+      }
+
+      .message {
+        background-color: rgb(0, 0, 0);
+        width: 24%;
+        padding: 10px;
+        margin: 17px 12px;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        height: 5px;
+        font-size: 15px;
+        line-height: 10px;
+      }
+
+      .left {
+        float: left;
+        clear: both;
+      }
+
+      .right {
+        float: right;
+        clear: both;
+      }
+      .center {
+        border: 2px solid white;
+        width: 97%;
+        margin: auto;
+        clear: both;
+        text-align: center;
+        padding: 13px 0;
+        line-height: 10px;
+        margin-top: 2px;
+      }
+
+      #send-container {
+        display: block;
+        margin: auto;
+        text-align: center;
+        max-width: 985px;
+        width: 100%;
+        margin-top: 3px;
+      }
+
+      #messageinp {
+        width: 70%;
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 30px;
+      }
+
+      .btn {
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 6px;
+        height: 30px;
+      }
+    </style> -->
+
+    <style>
+      body {
+        background-image: linear-gradient(to right, #0172af, #74febd);
+        height: 100vh;
+        margin: 0; /* Remove default margin */
+        font-family: "Arial", sans-serif; /* Choose a readable font */
+      }
+
+      h1 {
+        text-align: center;
+        color: #047ffc; /* Match the container background color */
+        margin-top: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        height: 60vh;
+        background-color: #007bff;
+        border: 2px solid black;
+        margin: auto;
+        padding: 10px;
+        overflow-y: auto;
+        border-radius: 10px; /* Add border-radius for a rounded look */
+      }
+
+      .message {
+        background-color: #333; /* Darker background color */
+        width: 24%; /* Adjust width for better readability */
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid white;
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+        line-height: 20px; /* Increase line-height for better spacing */
+        overflow-wrap: break-word; /* Break words if they exceed the container */
+      }
+
+      .left {
+        float: left;
+        clear: both;
+      }
+
+      .right {
+        float: right;
+        clear: both;
+      }
+      .center {
+        border: 2px solid white;
+        width: 97%;
+        margin: auto;
+        clear: both;
+        text-align: center;
+        padding: 13px 0;
+        line-height: 10px;
+        margin-top: 2px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      #send-container {
+        display: flex; /* Use flexbox for better alignment */
+        justify-content: space-between;
+        align-items: center;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      #messageinp {
+        flex: 1; /* Take remaining space in the container */
+        padding: 8px;
+        border: 2px solid #007bff;
+        border-radius: 6px;
+      }
+
+      .btn {
+        cursor: pointer;
+        border: 2px solid #007bff;
+        border-radius: 6px;
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
+        margin-left: 10px;
+      }
+
+      .btn:hover {
+        background-color: #00438b; /* Darker color on hover */
+      }
+      #photoinp {
+        margin-left: 10px;
+      }
+      .shared-photo {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Create OR Join Group</h1>
+    <div class="container" id="message-container">
+      <div class="message right">Krishna</div>
+      <div class="message center">Join / Left</div>
+      <div class="message left">Hardik</div>
+    </div>
+    <div class="send">
+      <form action="#" id="send-container">
+        <input type="text" name="messageinp" id="messageinp" required />
+        <!-- <input type="file" name="photo" id="photoinp" accept="image/*" /> -->
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
